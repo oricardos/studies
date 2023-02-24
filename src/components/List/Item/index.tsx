@@ -15,7 +15,7 @@ export const Item = ({
 }: Props) => {
   return (
     <li
-      className={style.item}
+      className={`${style.item} ${selected ? style.selectedItem : ''}`}
       onClick={() =>
         selectTask({
           task,
