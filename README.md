@@ -2,6 +2,8 @@
 
 Project created in TypeScript to organize studies.
 
+## To see the project live, visit: [https://studiests.netlify.app/](https://studiests.netlify.app/)
+
 
 ## License ⚖️
 
