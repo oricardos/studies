@@ -15,9 +15,9 @@ export const Item = ({
 }: Props) => {
   return (
     <li
-      className={`${style.item} ${selected ? style.selectedItem : ''}`}
+      className={`${style.item} ${selected ? style.selectedItem : ''} ${completed ? style.completedItem : ''}`}
       onClick={() =>
-        selectTask({
+        !completed && selectTask({
           task,
           time,
           selected,
@@ -28,6 +28,7 @@ export const Item = ({
     >
       <h3>{task}</h3>
       <span>{time}</span>
+      {completed && <span aria-label="tarefa completada" className={style.concluded}></span>}
     </li>
   );
 };
