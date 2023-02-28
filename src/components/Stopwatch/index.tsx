@@ -18,6 +18,15 @@ export const Stopwatch = ({selected}: Props) => {
         }
     },[selected])
 
+    const regressive = (time: number = 0) => {
+        setTimeout(() => {
+            if (time > 0) {
+                setTime(time - 1)
+                return regressive(time - 1)
+            }
+        }, 1000)
+    }
+
     
     return (
         <div className={style.stopwatch}>
@@ -27,7 +36,7 @@ export const Stopwatch = ({selected}: Props) => {
             <Clock time={time} />
         </div>
 
-        <Button>
+        <Button onClick={() => regressive(time)}>
             Começar
         </Button>
         </div>
